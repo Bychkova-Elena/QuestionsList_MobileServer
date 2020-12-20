@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="p-5">Выберите категорию</h1>
+  <div class="card-columns">
+    <a
+      *ngFor="let category of categories"
+      class="card"
+      [routerLink]="['/question-list', category.id_category]"
+    >
+      <div class="card-body">
+        <h5 class="card-title">{{ category.name }}</h5>
+      </div>
+    </a>
+  </div>
+</div>

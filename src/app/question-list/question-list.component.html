@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-transparent">
+        <li class="breadcrumb-item">
+          <a [routerLink]="['/']">Категории</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Вопросы</li>
+      </ol>
+    </nav>
+    <button
+      type="button"
+      class="btn btn-dark mt-3 mb-5"
+      [routerLink]="['/add-question', id]"
+    >
+      Добавить вопрос в эту категорию
+    </button>
+  </div>
+  <h1 class="mb-5">Список вопросов категории "{{ name }}"</h1>
+  <h5 *ngIf="questions.length == 0">В этой категории пока нет вопросов</h5>
+  <div #elseBlock *ngFor="let question of questions" class="card bg-light mb-3">
+    <app-question-item [question]="question"></app-question-item>
+  </div>
+</div>

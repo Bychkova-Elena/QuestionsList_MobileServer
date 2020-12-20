@@ -1,0 +1,22 @@
+<div class="card-body">
+  <h5 class="card-title mb-5">{{ question.question }}</h5>
+  <button
+    *ngIf="!show"
+    type="button"
+    class="btn btn-outline-dark btn-lg btn-block text-left"
+    (click)="showBlock()"
+  >
+    Показать ответ
+  </button>
+  <div *ngIf="show">
+    <button
+      type="button"
+      class="btn btn-outline-dark btn-lg btn-block text-left"
+      (click)="showBlock()"
+    >
+      Скрыть ответ
+    </button>
+    <p class="m-3"><b>Ответ:</b> {{ question.answer }}</p>
+    <p *ngIf="question.clarification != ''">{{ question.clarification }}</p>
+  </div>
+</div>

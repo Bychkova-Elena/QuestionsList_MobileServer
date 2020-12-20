@@ -1,0 +1,53 @@
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent">
+      <li class="breadcrumb-item"><a [routerLink]="['/']">Категории</a></li>
+      <li class="breadcrumb-item">
+        <a [routerLink]="['/question-list', id]">Вопросы</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Добавление вопроса
+      </li>
+    </ol>
+  </nav>
+  <h1 class="mb-5 mt-5">Добавление вопроса в категорию "{{ name }}"</h1>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="question">Вопрос:<sup>*</sup></label>
+      <textarea
+        name="question"
+        id=""
+        cols="30"
+        rows="3"
+        class="form-control mb-3"
+        formControlName="question"
+        placeholder="Введите свой вопрос"
+      ></textarea>
+      <label for="answer">Ответ:<sup>*</sup></label>
+      <input
+        type="text"
+        name="answer"
+        class="form-control mb-3"
+        formControlName="answer"
+        placeholder="Введите ответ на вопрос"
+      />
+      <label for="clarification">Разъяснение/дополнение:</label>
+      <textarea
+        name="clarification"
+        id=""
+        cols="30"
+        rows="4"
+        class="form-control mb-3"
+        formControlName="clarification"
+        placeholder="Введите дополнение к ответу"
+      ></textarea>
+      <p><sup>*</sup> - Необходимые поля для заполнения</p>
+      <div class="col text-right mt-5">
+        <button class="btn btn-dark" type="submit" [disabled]="form.invalid">
+          Добавить
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
