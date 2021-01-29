@@ -1,8 +1,13 @@
+//  Express - фреймворк для Node.js, который реализовывает функции, необходимых для создания эффективных приложений и API
 const express = require("express");
+//  Создание парсера для для получения данных из запроса
 const bodyParser = require("body-parser");
+// Для работы с запросами MySQL
 const mysql = require("mysql2");
+// Подключение настроек для БД
 const dbConfig = require("./db.config.js");
 const history = require("connect-history-api-fallback");
+// Подключение фреймворка для Node.js, который реализовывает функции, необходимые для создания эффективных приложений и API
 const app = express();
 const port = 8085;
 
